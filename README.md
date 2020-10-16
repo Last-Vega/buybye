@@ -1,12 +1,12 @@
-# chrome_extension
+# buyBye(Chrome_extension)
 
 > A Vue.js project
 
 ## 最初にすること
 - このリポジトリをクローンしビルドまでする
     ```
-    git clone https://github.com/Memolution/chrome_extension.git
-    cd chrome_extension
+    git clone https://github.com/Memolution/buybye.git
+    cd buybye
     npm install
     npm run dev
     npm run build
