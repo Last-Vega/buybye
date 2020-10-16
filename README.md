@@ -1,6 +1,28 @@
-# buybye
+# chrome_extension
 
 > A Vue.js project
+
+## 最初にすること
+- このリポジトリをクローンしビルドまでする
+    ```
+    git clone https://github.com/Memolution/chrome_extension.git
+    cd chrome_extension
+    npm install
+    npm run dev
+    npm run build
+    ```
+ビルドするとルート直下にdistフォルダが生成される
+
+- リポジトリのルートディレクトリごとchrome拡張として読み込む（chrome://extensions/　からパッケージ化されてない拡張機能を読み込むを選択）
+
+## 開発するとき
+- 開発サーバを立てる
+`npm run dev`
+
+- 開発したものをchrome拡張に読み込む
+`npm run build`
+を実行しchrome拡張を更新する。
+
 
 ## Build Setup
 
