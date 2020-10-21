@@ -1,21 +1,59 @@
 <template>
 <div id="form">
+  <h2>購入理由をエレベーターピッチ風に書いてみましょう!</h2>
+  {{evp_template.temp1}}
   <textarea
-    id="tweetBox"
+    class="tweetBox"
     placeholder="There are good reasons why I'll buy this product."
-    name="tweet_box"
+    name="why"
     maxlength="140"
     required
     v-on:keyup="GetTweet(value)"
     cols="40"
-    rows="8">
+    rows="2">
   </textarea>
+  {{evp_template.temp2}}<br>
+  {{evp_template.temp3}}
+  <textarea
+    class="tweetBox"
+    placeholder="There are good reasons why I'll buy this product."
+    name="whatOrWhy"
+    maxlength="140"
+    required
+    v-on:keyup="GetTweet(value)"
+    cols="40"
+    rows="2">
+  </textarea>
+  {{evp_template.temp4}}
+  <textarea
+    class="tweetBox"
+    placeholder="There are good reasons why I'll buy this product."
+    name="how"
+    maxlength="140"
+    required
+    v-on:keyup="GetTweet(value)"
+    cols="40"
+    rows="2">
+  </textarea>
+  {{evp_template.temp5}}
+  <!--
+  {{evp_template.temp6}}
+  <select
+    class="tweetBox"
+    name="replace"
+    size="2"
+    v-on:keyup="GetTweet(value)"
+    >
+      <option value="できます">できます</option>
+      <option value="できません">できません</option>
+  </select>
+  {{evp_template.temp7}}
+  -->
   <div id="TWEET">
     <a
       class="button"
       href="https://twitter.com/intent/tweet?hashtags=buyBye&text="
       target="_blank"
-
       >
       Tweet
     </a>
@@ -27,12 +65,30 @@
 <script>
 export default {
   name: 'form',
+  data: function() {
+    return {
+      evp_template: {
+          temp1: "この商品は、",
+          temp2: "を解決する事を目的に買います。",
+          temp3: "これがあると",
+          temp4: "を",
+          temp5: "して問題を解決できます。",
+          temp6: "これは、今の私の所持品では代替",
+          temp7: "。"
+      }
 
+    }
+  },
   methods: {
     GetTweet(str,code){
+
       var target = document.getElementById("form");
-      var text_all = document.getElementById("tweetBox");
-      var input_data = text_all.value.replace(/\r?\n/g, '%0D%0A');
+      var evp_box = document.getElementsByClassName("tweetBox");
+      console.log(evp_box);
+      var text_all = "";
+      var text_all = this.evp_template.temp1 + evp_box[0].value + this.evp_template.temp2 + this.evp_template.temp3 + evp_box[1].value 
+                     + this.evp_template.temp4 + evp_box[2].value + this.evp_template.temp5;
+      var input_data = text_all.replace(/\r?\n/g, '%0D%0A');
       TWEET.innerHTML = '<a class="button" href="https://twitter.com/intent/tweet?hashtags=buyBye&text=' + input_data + '" target="_blank">Tweet</a>'
     }
   }
@@ -40,13 +96,13 @@ export default {
 </script>
 
 <style lang="scss">
-#tweetBox {
+.tweetBox {
     border: 2px solid #00aced ;
     border-radius: 0.67em;
     padding: 0.5em;
     background-color: snow;
     width: 50em;
-    height: 120px;
+    height: 60px;
     font-size: 1em;
     line-height: 1.2;
 }
