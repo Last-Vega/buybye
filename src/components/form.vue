@@ -4,7 +4,7 @@
   {{evp_template.temp1}}
   <textarea
     class="tweetBox"
-    placeholder="There are good reasons why I'll buy this product."
+    placeholder="購買動機を入力してね"
     name="why"
     maxlength="140"
     required
@@ -16,7 +16,7 @@
   {{evp_template.temp3}}
   <textarea
     class="tweetBox"
-    placeholder="There are good reasons why I'll buy this product."
+    placeholder="どんな問題が解決できるか入力してね"
     name="whatOrWhy"
     maxlength="140"
     required
@@ -27,7 +27,7 @@
   {{evp_template.temp4}}
   <textarea
     class="tweetBox"
-    placeholder="There are good reasons why I'll buy this product."
+    placeholder="どのようにして解決できそうか入力してね"
     name="how"
     maxlength="140"
     required
@@ -86,7 +86,7 @@ export default {
       var evp_box = document.getElementsByClassName("tweetBox");
       console.log(evp_box);
       var text_all = "";
-      var text_all = this.evp_template.temp1 + evp_box[0].value + this.evp_template.temp2 + this.evp_template.temp3 + evp_box[1].value 
+      var text_all = this.evp_template.temp1 + evp_box[0].value + this.evp_template.temp2 + this.evp_template.temp3 + evp_box[1].value
                      + this.evp_template.temp4 + evp_box[2].value + this.evp_template.temp5;
       var input_data = text_all.replace(/\r?\n/g, '%0D%0A');
       TWEET.innerHTML = '<a class="button" href="https://twitter.com/intent/tweet?hashtags=buyBye&text=' + input_data + '" target="_blank">Tweet</a>'
