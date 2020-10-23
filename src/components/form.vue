@@ -8,6 +8,7 @@
     name="why"
     maxlength="140"
     required
+    v-model="tweetContent.tweetWhy"
     v-on:keyup="GetTweet(value)"
     cols="40"
     rows="2">
@@ -20,6 +21,7 @@
     name="whatOrWhy"
     maxlength="140"
     required
+    v-model="tweetContent.tweetWhat"
     v-on:keyup="GetTweet(value)"
     cols="40"
     rows="2">
@@ -31,6 +33,7 @@
     name="how"
     maxlength="140"
     required
+    v-model="tweetContent.tweetHow"
     v-on:keyup="GetTweet(value)"
     cols="40"
     rows="2">
@@ -49,15 +52,14 @@
   </select>
   {{evp_template.temp7}}
   -->
+  <p class="error"> {{ validation.validateResult}} </p>
   <div id="TWEET">
     <a
       class="button"
-      href="https://twitter.com/intent/tweet?hashtags=buyBye&text="
-      target="_blank"
+      
       >
       Tweet
     </a>
-
   </div>
 </div>
 </template>
@@ -75,21 +77,33 @@ export default {
           temp5: "して問題を解決できます。",
           temp6: "これは、今の私の所持品では代替",
           temp7: "。"
+      },
+      tweetContent: {
+        tweetWhy: null,
+        tweetWhat: null,
+        tweetHow: null
+      },
+      validation: {
+        validateResult: ""
       }
 
     }
   },
   methods: {
     GetTweet(str,code){
-
-      var target = document.getElementById("form");
-      var evp_box = document.getElementsByClassName("tweetBox");
-      console.log(evp_box);
-      var text_all = "";
-      var text_all = this.evp_template.temp1 + evp_box[0].value + this.evp_template.temp2 + this.evp_template.temp3 + evp_box[1].value
-                     + this.evp_template.temp4 + evp_box[2].value + this.evp_template.temp5;
-      var input_data = text_all.replace(/\r?\n/g, '%0D%0A');
-      TWEET.innerHTML = '<a class="button" href="https://twitter.com/intent/tweet?hashtags=buyBye&text=' + input_data + '" target="_blank">Tweet</a>'
+      if (this.tweetContent.tweetWhy.length + this.tweetContent.tweetWhat.length + this.tweetContent.tweetHow.length < 20){
+        this.validation.validateResult = "20字以上入力してください";
+      }else{
+        this.validation.validateResult = "めっちゃいい理由！"
+        var target = document.getElementById("form");
+        var evp_box = document.getElementsByClassName("tweetBox");
+        console.log(evp_box);
+        var text_all = "";
+        var text_all = this.evp_template.temp1 + evp_box[0].value + this.evp_template.temp2 + this.evp_template.temp3 + evp_box[1].value
+                       + this.evp_template.temp4 + evp_box[2].value + this.evp_template.temp5;
+        var input_data = text_all.replace(/\r?\n/g, '%0D%0A');
+        TWEET.innerHTML = '<a class="button" href="https://twitter.com/intent/tweet?hashtags=buyBye&text=' + input_data + '" target="_blank">Tweet</a>'
+      }
     }
   }
 }
