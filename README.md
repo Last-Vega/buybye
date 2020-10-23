@@ -2,7 +2,7 @@
 
 > A Vue.js project
 
-##　インストールする時にすること
+## インストールする時にすること
 
 - zipブランチに移動する
 - CodeタブからDownload ZIPを選択する
