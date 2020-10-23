@@ -1,6 +1,6 @@
 {
   "manifest_version":2,
-  "name":"buyBye",
+  "name":"GoodBuy-Zip",
   "description": "Amazonで商品をカートに入れようとすると購入する理由を入力する画面に遷移します。",
   "version":"1.0",
   "content_scripts":[
