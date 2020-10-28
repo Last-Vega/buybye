@@ -1,22 +1,22 @@
-$(function() {
+$(function () {
   console.log("コンテントスクリプト");
-  const htmlPath = './index.html';
+  const htmlPath = './index.html?url=' + location.href;
   const htmlURL = chrome.extension.getURL(htmlPath);
-  $("#add-to-cart-button").click(function(){
+  $("#add-to-cart-button").click(function () {
     var flag = window.confirm('これを買う動機ちゃんとある?')
-    if (flag){
+    if (flag) {
       window.open(htmlURL);
     }
-    else{
+    else {
       return false;
     }
   })
-  $("#rcx-subscribe-submit-button-announce").click(function(){
+  $("#rcx-subscribe-submit-button-announce").click(function () {
     var flag = window.confirm('これを買う動機ちゃんとある?')
-    if (flag){
+    if (flag) {
       window.open(htmlURL);
     }
-    else{
+    else {
       return false;
     }
   })
