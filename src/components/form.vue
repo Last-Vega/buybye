@@ -98,9 +98,12 @@ export default {
         var target = document.getElementById("form");
         var evp_box = document.getElementsByClassName("tweetBox");
         console.log(evp_box);
+        var queryStr = location.search;
+        var queryArr = queryStr.split('=');
+        var url = encodeURI(queryArr[1]); 
         var text_all = "";
         var text_all = this.evp_template.temp1 + evp_box[0].value + this.evp_template.temp2 + this.evp_template.temp3 + evp_box[1].value
-                       + this.evp_template.temp4 + evp_box[2].value + this.evp_template.temp5;
+                       + this.evp_template.temp4 + evp_box[2].value + this.evp_template.temp5 + url;
         var input_data = text_all.replace(/\r?\n/g, '%0D%0A');
         TWEET.innerHTML = '<a class="button" href="https://twitter.com/intent/tweet?hashtags=buyBye&text=' + input_data + '" target="_blank">Tweet</a>'
       }
