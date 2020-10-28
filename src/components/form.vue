@@ -93,6 +93,8 @@ export default {
     GetTweet(str,code){
       if (this.tweetContent.tweetWhy.length + this.tweetContent.tweetWhat.length + this.tweetContent.tweetHow.length < 20){
         this.validation.validateResult = "20字以上入力してください";
+      }else if (this.tweetContent.tweetWhy.length + this.tweetContent.tweetWhat.length + this.tweetContent.tweetHow.length > 87) {
+        this.validation.validateResult = "熱入りすぎだよ！";
       }else{
         this.validation.validateResult = "めっちゃいい理由！"
         var target = document.getElementById("form");
@@ -105,7 +107,7 @@ export default {
         var text_all = this.evp_template.temp1 + evp_box[0].value + this.evp_template.temp2 + this.evp_template.temp3 + evp_box[1].value
                        + this.evp_template.temp4 + evp_box[2].value + this.evp_template.temp5 + url;
         var input_data = text_all.replace(/\r?\n/g, '%0D%0A');
-        TWEET.innerHTML = '<a class="button" href="https://twitter.com/intent/tweet?hashtags=buyBye&text=' + input_data + '" target="_blank">Tweet</a>'
+        TWEET.innerHTML = '<a class="button" href="https://twitter.com/intent/tweet?hashtags=Goodbuy&text=' + input_data + '" target="_blank">Tweet</a>'
       }
     }
   }
