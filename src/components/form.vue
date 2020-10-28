@@ -56,7 +56,7 @@
   <div id="TWEET">
     <a
       class="button"
-      
+
       >
       Tweet
     </a>
@@ -100,7 +100,7 @@ export default {
         console.log(evp_box);
         var queryStr = location.search;
         var queryArr = queryStr.split('=');
-        var url = encodeURI(queryArr[1]); 
+        var url = encodeURI(queryArr[1]);
         var text_all = "";
         var text_all = this.evp_template.temp1 + evp_box[0].value + this.evp_template.temp2 + this.evp_template.temp3 + evp_box[1].value
                        + this.evp_template.temp4 + evp_box[2].value + this.evp_template.temp5 + url;
@@ -119,7 +119,7 @@ export default {
     padding: 0.5em;
     background-color: snow;
     width: 50em;
-    height: 60px;
+    height: 15px;
     font-size: 1em;
     line-height: 1.2;
 }
