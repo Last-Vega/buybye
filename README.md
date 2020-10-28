@@ -1,4 +1,4 @@
-# buyBye(Chrome_extension)
+# Goodbuy(Chrome_extension)
 
 > A Vue.js project
 

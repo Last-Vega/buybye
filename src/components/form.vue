@@ -93,6 +93,8 @@ export default {
     GetTweet(str,code){
       if (this.tweetContent.tweetWhy.length + this.tweetContent.tweetWhat.length + this.tweetContent.tweetHow.length < 20){
         this.validation.validateResult = "20字以上入力してください";
+      }else if (this.tweetContent.tweetWhy.length + this.tweetContent.tweetWhat.length + this.tweetContent.tweetHow.length > 87) {
+        this.validation.validateResult = "熱入りすぎだよ！";
       }else{
         this.validation.validateResult = "めっちゃいい理由！"
         var target = document.getElementById("form");
