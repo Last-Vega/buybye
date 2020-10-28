@@ -7,12 +7,12 @@
 
 <script>
 import Form from './components/form.vue'
-import Order from './components/order.vue'
+// import Order from './components/order.vue'
 export default {
   name: 'app',
   components:{
-    Form,
-    Order
+    Form
+    // Order
   }
   // data () {
   //   return {
