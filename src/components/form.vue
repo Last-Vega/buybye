@@ -121,7 +121,7 @@ export default {
           url;
         var input_data = text_all.replace(/\r?\n/g, "%0D%0A");
         TWEET.innerHTML =
-          '<a class="button" href="https://twitter.com/intent/tweet?hashtags=Goodbuy&text=' +
+          '<a class="button" href="https://twitter.com/intent/tweet?hashtags=Goodbuy_enp&text=' +
           input_data +
           '" target="_blank">Tweet</a>';
       }
