@@ -2,13 +2,15 @@
   "manifest_version":2,
   "name":"GoodBuy-Zip",
   "description": "Amazonで商品をカートに入れようとすると購入する理由を入力する画面に遷移します。",
-  "version":"1.0",
-  "content_scripts":[
+  "version": "1.0",
+  "content_scripts": [
     {
-      "matches":[
-        "https://www.amazon.co.jp/*"
+      "matches": [
+        "https://www.amazon.co.jp/*",
+        "https://item.rakuten.co.jp/*",
+        "https://store.shopping.yahoo.co.jp/*"
       ],
-      "js":[
+      "js": [
         "./src/main.js",
         "jquery-3.4.0.min.js",
         "content.js"
@@ -16,8 +18,8 @@
     }
   ],
   "permissions": [
-      "storage",
-      "activeTab"
+    "storage",
+    "activeTab"
   ],
   "web_accessible_resources": [
     "/*.html"
