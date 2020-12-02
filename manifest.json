@@ -3,6 +3,14 @@
   "name": "Goodbuy",
   "description": "Amazonで商品をカートに入れようとすると購入する理由を入力する画面に遷移します。",
   "version": "1.0",
+
+  "browser_action": {
+    "default_title": "Goodbuy",
+    "default_popup": "popup.html"
+  },
+  
+  "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
+  
   "content_scripts": [
     {
       "matches": [
