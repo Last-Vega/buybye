@@ -1,7 +1,8 @@
 <template>
   <div id="form">
     <h2>購入理由をエレベーターピッチ風に書いてみましょう!</h2>
-    {{evp_template.temp1}}
+    <p>---------エレベーターピッチフォーム----------</p>
+    {{ evp_template.temp1 }}
     <textarea
       class="tweetBox"
       placeholder="購買動機を入力してね"
@@ -13,10 +14,11 @@
       cols="40"
       rows="2"
     ></textarea>
-    {{evp_template.temp2}}
+    {{ evp_template.temp2 }}
     <br />
-    {{evp_template.temp3}}
-    <textarea
+    {{ evp_template.temp3 }}
+    <!--
+      <textarea
       class="tweetBox"
       placeholder="どんな問題が解決できるか入力してね"
       name="whatOrWhy"
@@ -27,10 +29,11 @@
       cols="40"
       rows="2"
     ></textarea>
-    {{evp_template.temp4}}
+    -->
+    {{ evp_template.temp4 }}
     <textarea
       class="tweetBox"
-      placeholder="どのようにして解決できそうか入力してね"
+      placeholder="この商品を使ってどのようにして解決できそうか入力してね"
       name="how"
       maxlength="140"
       required
@@ -39,7 +42,23 @@
       cols="40"
       rows="2"
     ></textarea>
-    {{evp_template.temp5}}
+    {{ evp_template.temp5 }}
+
+    <br />
+    <br />
+    <p>------------自由記述フォーム------------</p>
+    <textarea
+      class="tweetBox_2"
+      placeholder="ex)この商品は、アイマスクです。最近、目の疲れがあって、その課題を解決したいと思っているので、これを買いたいです。"
+      name="how"
+      maxlength="140"
+      required
+      v-model="tweetContent.tweetHow"
+      v-on:keyup="GetTweet(value)"
+      cols="40"
+      rows="10"
+    ></textarea>
+
     <!--
   {{evp_template.temp6}}
   <select
@@ -53,7 +72,8 @@
   </select>
   {{evp_template.temp7}}
     -->
-    <p class="error">{{ validation.validateResult}}</p>
+
+    <p class="error">{{ validation.validateResult }}</p>
     <div id="TWEET">
       <a class="button">Tweet</a>
     </div>
@@ -63,25 +83,27 @@
 <script>
 export default {
   name: "form",
-  data: function() {
+  data: function () {
     return {
       evp_template: {
-        temp1: "この商品は、",
+        temp1: "この商品は",
         temp2: "を解決する事を目的に買います。",
-        temp3: "これがあると",
-        temp4: "を",
-        temp5: "して問題を解決できます。",
+        temp4: "この課題を",
+        //temp3: "これがあると",
+        //"この課題を"という表現にして、二つ目のテキスト入力を無くす
+        //temp4: "を",
+        temp5: "解決できます。",
         temp6: "これは、今の私の所持品では代替",
-        temp7: "。"
+        temp7: "。",
       },
       tweetContent: {
         tweetWhy: null,
         tweetWhat: null,
-        tweetHow: null
+        tweetHow: null,
       },
       validation: {
-        validateResult: ""
-      }
+        validateResult: "",
+      },
     };
   },
   methods: {
@@ -113,10 +135,10 @@ export default {
           this.evp_template.temp1 +
           evp_box[0].value +
           this.evp_template.temp2 +
-          this.evp_template.temp3 +
-          evp_box[1].value +
+          // this.evp_template.temp3 +
+          // evp_box[1].value +
           this.evp_template.temp4 +
-          evp_box[2].value +
+          evp_box[1].value +
           this.evp_template.temp5 +
           url;
         var input_data = text_all.replace(/\r?\n/g, "%0D%0A");
@@ -125,8 +147,8 @@ export default {
           input_data +
           '" target="_blank">Tweet</a>';
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -138,6 +160,16 @@ export default {
   background-color: snow;
   width: 50em;
   height: 15px;
+  font-size: 1em;
+  line-height: 1.2;
+}
+.tweetBox_2 {
+  border: 2px solid #00aced;
+  border-radius: 0.67em;
+  padding: 0.5em;
+  background-color: snow;
+  width: 50em;
+  height: 60px;
   font-size: 1em;
   line-height: 1.2;
 }
