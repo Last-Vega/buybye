@@ -1,47 +1,25 @@
 $(function () {
   console.log("コンテントスクリプト");
-  const htmlPath = './index.html?url=' + location.href;
-  const htmlURL = chrome.extension.getURL(htmlPath);
+  // const htmlPath = './index.html?url=' + location.href;
+  // const htmlURL = chrome.extension.getURL(htmlPath);
 
-  $("#add-to-cart-button").click(function () {
-    var flag = window.confirm('これを買う動機ちゃんとある?')
-    if (flag) {
-      window.open(htmlURL);
-    }
-    else {
-      return false;
-    }
-  })
+  // herokuのurlに遷移
+  const htmlURL = 'https://bloodcurdling-cemetery-16965.herokuapp.com/will/' + location.href;
 
-  $("#rcx-subscribe-submit-button-announce").click(function () {
-    var flag = window.confirm('これを買う動機ちゃんとある?')
-    if (flag) {
-      window.open(htmlURL);
-    }
-    else {
-      return false;
-    }
-  })
+  // 開発するときはこっち
+  //const htmlURL = 'http://127.0.0.1:8080/will' + location.href;
 
-  //楽天
-  $(".cart-button").click(function () {
-    var flag = window.confirm('これを買う動機ちゃんとある?')
-    if (flag) {
-      window.open(htmlURL);
-    }
-    else {
-      return false;
-    }
-  })
+  var targetList = ['#add-to-cart-button', '#rcx-subscribe-submit-button-announce', '.cart-button', '.elButton']
 
-  //Yahoo shopping
-  $(".elButton").click(function () {
-    var flag = window.confirm('これを買う動機ちゃんとある?')
-    if (flag) {
-      window.open(htmlURL);
-    }
-    else {
-      return false;
-    }
-  })
+  for (const elm of targetList){
+    $(elm).click(function () {
+      var flag = window.confirm('これを買う動機ちゃんとある?')
+      if (flag) {
+        window.open(htmlURL);
+      }
+      else {
+        return false;
+      }
+    })
+  }
 });
