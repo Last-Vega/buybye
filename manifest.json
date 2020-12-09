@@ -3,6 +3,11 @@
   "name": "Goodbuy",
   "description": "Amazonで商品をカートに入れようとすると購入する理由を入力する画面に遷移します。",
   "version": "1.0",
+  "icons": {
+    "16": "images/icons/icon16.png",
+    "48": "images/icons/icon48.png",
+    "128": "images/icons/icon16.png"
+  },
 
   "browser_action": {
     "default_title": "Goodbuy",
