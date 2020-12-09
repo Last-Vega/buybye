@@ -8,9 +8,9 @@
     "default_title": "Goodbuy",
     "default_popup": "popup.html"
   },
-  
+
   "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
-  
+
   "content_scripts": [
     {
       "matches": [
@@ -19,7 +19,6 @@
         "https://store.shopping.yahoo.co.jp/*"
       ],
       "js": [
-        "./src/main.js",
         "jquery-3.4.0.min.js",
         "content.js"
       ]
