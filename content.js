@@ -13,7 +13,7 @@ $(function () {
 
   for (const elm of targetList){
     $(elm).click(function () {
-      var flag = window.confirm('これを買う動機ちゃんとある?')
+      var flag = window.confirm('これを買う動機を言語化してみましょう！')
       if (flag) {
         window.open(htmlURL);
       }
