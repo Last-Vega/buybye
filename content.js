@@ -13,13 +13,13 @@ $(function () {
 
   for (const elm of targetList){
     $(elm).click(function () {
-      var flag = window.confirm('これを買う動機を言語化してみましょう！')
-      if (flag) {
+      var flag1 = window.confirm('買う動機を言語化してみましょう！(キャンセルで購入理由フォームをスキップ）')
+        if (flag1) {
         window.open(htmlURL);
-      }
-      else {
-        return false;
-      }
+       }
+       else {
+         return true;
+       }
     })
   }
 });
