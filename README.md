@@ -1,48 +1,23 @@
 # Goodbuy(Chrome_extension)
 
-> A Vue.js project
+## スライド
+https://docs.google.com/presentation/d/1QCJ1WCg9zngbLG4tI_DoR6qx911PPcrEr7-CrfvoV88/edit#slide=id.p
+
+## エレベーターピッチ
+[Goodbuy] は
+[目的のない買い物]を
+解決したい
+[慎重に買い物をしたい人]向けの
+[Webサービス]です。
+これは [購入理由を記述するタイミングを与えること] によって、
+[家計簿・買い物リスト] とは違って
+[理にかなった買い物] を実現できます。
 
 ## インストールする時にすること
 
-- zipブランチに移動する
-- CodeタブからDownload ZIPを選択する
-- chromeの「拡張機能を管理」を選択する
-- 「パッケージ化されていない機能を読み込む」を選択し、ダウンロードしたフォルダをルートディレクトリごと選択する。
-
-
-## 最初にすること
-- このリポジトリをクローンしビルドまでする
-    ```
-    git clone https://github.com/Memolution/buybye.git
-    cd buybye
-    npm install
-    npm run dev
-    npm run build
-    ```
-ビルドするとルート直下にdistフォルダが生成される
-
-- リポジトリのルートディレクトリごとchrome拡張として読み込む（chrome://extensions/　からパッケージ化されてない拡張機能を読み込むを選択）
-
-## 開発するとき
-- 開発サーバを立てる
-`npm run dev`
-
-- 開発したものをchrome拡張に読み込む
-`npm run build`
-を実行しchrome拡張を更新する。
-
-
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-```
-
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+- リリースノートに移動する。
+- zipファイルをダウンロードする。
+- ダウンロードしたzipファイルを解凍する。
+- chromeの「拡張機能を管理」を選択する。
+- 「パッケージ化されていない機能を読み込む」を選択し、解凍したフォルダをルートディレクトリごと選択する。
+- 開発したものをchrome拡張に読み込む。
